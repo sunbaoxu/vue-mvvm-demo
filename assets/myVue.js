@@ -156,7 +156,9 @@
     },
     // 获取 data 中的属性值
     get: function () {
-      this.value = this.vm[this.name]; // 触发相应属性的 get
+      // 触发相应属性的 get
+      //Dep.target   执行  addSub 方法
+      this.value = this.vm[this.name]; 
     }
   }
 
