@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>步骤一</title>
+</head>
+<body>
+  <script>
+
+    var obj ={};
+
+    var name ='张三';
+
+    Object.defineProperty(obj,'name',{
+      get :function(){
+        console.log('触发get方法')
+        return name
+      },
+      set :function(val){
+        console.log(val,'触发set方法')
+        name = val
+      }
+    })
+
+    console.group('首先获取name =======================')
+    console.log(obj.name)
+
+    console.group('然后设置name =======================')
+    obj.name ='李四'
+
+    console.group('再次获取name =======================')
+    console.log(obj.name)
+
+  </script>
+</body>
+</html>

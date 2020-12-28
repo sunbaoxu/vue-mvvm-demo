@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>步骤二</title>
+</head>
+<body>
+  <div>
+    <input id="inputId" placeholder="请输入"/>
+    <div>
+      这是内容：
+      <p id="txtId"></p>
+    </div>
+  </div>
+  <script>
+    var obj ={};
+    var txtId = document.getElementById('txtId');
+
+    Object.defineProperty(obj,'name',{
+      get :function(){
+        console.log('触发get方法')
+        return name
+      },
+      set :function(val){
+        //name 改变，触发了set方法
+        console.log(val,'触发set方法')
+        name = val;
+        //使用innerHTML 变更view视图
+        txtId.innerHTML = name;
+      }
+    })
+
+    //input输入时，获得他的value
+    inputId.oninput =function(e){
+      var val = e.target.value;
+      console.log(val,'input的值')
+      //赋值给obj.name
+      obj.name = val;
+    }
+
+  </script>
+</body>
+</html>
