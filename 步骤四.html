@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>步骤四</title>
+</head>
+<body>
+  <div id="app">
+    <input id="inputId" placeholder="请输入" v-model="text" />
+    <div>
+      这是内容text：
+      <p id="txtId">{{text}}</p>
+    </div>
+  </div>
+  <script src="./assets/myVue.js"></script>
+  <script>
+    var vm = new MyVue({
+      el:'app',
+      data:{
+        text:'hello word'
+      }
+    })
+  </script>
+</body>
+</html>

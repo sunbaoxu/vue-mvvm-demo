@@ -5,7 +5,7 @@ function MyVue (opts){
   observer(this.data,this)
 
   var id = opts.el;
-
+console.log(window,this,'---------')
   var dom =nodeToFragment(document.getElementById(id),this);
 
   document.getElementById(id).appendChild(dom)
@@ -19,6 +19,7 @@ function nodeToFragment (node,vm){
   var child;
 
   while (child = node.firstChild){
+    console.log(child,'-----child')
     compile(child,vm);
 
     flag.appendChild(child);
